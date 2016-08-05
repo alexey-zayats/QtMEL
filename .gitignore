@@ -39,3 +39,4 @@ ui_*
 debug/*
 release/*
 *.rc
+*.stash
