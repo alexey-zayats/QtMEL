@@ -21,7 +21,7 @@
 ****************************************************************************/
 
 #include "audiograbber.h"
-#include "../../3rdparty/RtAudio/RtAudio.h"
+#include <rtaudio/RtAudio.h>
 
 int handleData(void *outputBuffer, void *inputBuffer, unsigned int nBufferFrames,
                double streamTime, RtAudioStreamStatus status, void *data)
@@ -124,7 +124,7 @@ int AudioGrabber::grabbedAudioDataSize() const
 }
 
 int AudioGrabber::elapsedMilliseconds() const
-{ 
+{
     if (!m_rtAudio || state() == AudioGrabber::StoppedState)
         return 0;
 
@@ -168,7 +168,7 @@ bool AudioGrabber::start()
         try {
             m_rtAudio->openStream(NULL, &params, format().format(), format().sampleRate(), &bufferFrames, &handleData, this);
             m_rtAudio->startStream();
-        } catch (RtError&) {
+        } catch (RtAudioError&) {
             setError(AbstractGrabber::DeviceOpenError, tr("Unable to open device."));
             return false;
         }

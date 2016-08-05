@@ -30,9 +30,6 @@
 
 #include <QCamera>
 
-#include <opencv/cv.h>
-#include <opencv/highgui.h>
-
 CameraGrabber::CameraGrabber(QObject *parent)
     : AbstractImageGrabber(parent)
     , m_deviceIndex(-1)

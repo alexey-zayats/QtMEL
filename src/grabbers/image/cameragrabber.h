@@ -28,7 +28,10 @@
 
 #include <QStringList>
 
-class CvCapture;
+#include <opencv/cv.h>
+#include <opencv/highgui.h>
+
+//class CvCapture;
 
 //! The CameraGrabber class allows the application to capture frames from a camera device.
 /*!

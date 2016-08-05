@@ -71,7 +71,8 @@ public:
         InvalidAudioCodecError, /*!< Could not open audio codec. */
         FileOpenError, /*!< Could not open a file. */
         InvalidConversionContext, /*!< Could not initialize conversion context. */
-        InvalidInputPixelFormat /*!< Could not convert input pixel format to the ffmpeg's format. */
+        InvalidInputPixelFormat, /*!< Could not convert input pixel format to the ffmpeg's format. */
+        WriteHeaderError
     };
 
     /*! This enum describes the state of the encoder. */
